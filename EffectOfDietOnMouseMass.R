@@ -7,10 +7,14 @@ library(dplyr)
 data <- read.csv("/home/sperling/Jdrive/DataAnal_4_LifeSci_PH525Xx/dataSets/femaleMiceWeights.csv")
 
 # select and filter data for control data (normal chow diet)
-control <- filter(data,Diet=="chow") %>% dplyr::select(Bodyweight) %>% unlist
+control <- filter(data,Diet=="chow") %>% 
+  dplyr::select(Bodyweight) %>% 
+  unlist
 
 # select and filter data for variable under study (hf = high fat diet)
-treatment <- filter(data,Diet=="hf") %>% dplyr::select(Bodyweight) %>% unlist
+treatment <- filter(data,Diet=="hf") %>% 
+  dplyr::select(Bodyweight) %>% 
+  unlist
 
 # hf diet mice not always heavier: what is a good way to compare the two distributions?
 
